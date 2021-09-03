@@ -1,0 +1,28 @@
+#seller-wrapper {
+    display: flex;
+    position: relative;
+}
+
+#seller-sidebar {
+    flex: 1;
+    /* position: fixed; */
+}
+
+#seller-sidebar a {
+    text-decoration: none;
+    color: black;
+}
+
+#seller-sidebar a:hover{
+    color: blue;
+}
+
+#seller-main-content {
+    /* margin-left: 230px; */
+    flex: 5;
+}
+
+#seller-show-products tr th, #seller-show-products tr td{
+    padding: 10px;
+    border: 1px solid black;
+}
