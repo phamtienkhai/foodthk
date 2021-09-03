@@ -63,10 +63,6 @@
                 <input type="text" class="form-control" id="exampleInputPassword1" name="price">
             </div>
             <div class="mb-3">
-                <label for="title" class="form-label">Giá</label>
-                <input type="hidden" class="form-control" id="exampleInputPassword1" name="price1">
-            </div>
-            <div class="mb-3">
                 <label for="title" class="form-label">Hình ảnh</label>
                 <input type="file" class="form-control" id="exampleInputPassword1" name="image_product">
             </div>
