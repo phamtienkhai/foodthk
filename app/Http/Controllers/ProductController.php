@@ -61,7 +61,9 @@ class ProductController extends Controller
                 return $request;
                 $product->image_product = '';
             }
+
             $product->save();
+            
             return redirect()->route('seller.addProduct')->with('success', 'them thanh cong');
         }catch(Exception $error){
             dd($error);
