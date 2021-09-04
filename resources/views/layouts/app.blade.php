@@ -29,6 +29,14 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     foodTHK
                 </a>
+                <span>|</span>
+                @if (Route::has('login'))
+                    @auth
+                        <a class="navbar-brand seller-page" href="{{ url('/seller') }}">Trang người bán</a>
+                    @else
+                        <a class="navbar-brand seller-page" href="{{ route('login') }}">Trang người bán</a>
+                    @endauth
+                @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -63,6 +71,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         Đăng xuất
                                     </a>
+                                    
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

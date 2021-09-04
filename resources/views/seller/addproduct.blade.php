@@ -44,9 +44,9 @@
                 <label for="title" class="form-label">Tên sản phẩm</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" name="title">
             </div>
-            @error('title')
+            <!-- @error('title')
                 <p style="color: red">{{ $message }}</p>
-            @enderror
+            @enderror -->
             <div class="mb-3">
                 <label class="form-check-label" for="exampleCheck1" for="type">Loại sản phẩm</label>
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="type">
