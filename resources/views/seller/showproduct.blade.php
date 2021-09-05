@@ -24,7 +24,7 @@
                     <td>{{ $item->type }}</td>
                     <td>{{ $item->price }}</td>
                     <td>
-                        <a href="">Sửa</a>
+                        <a href="{{ route('seller.editProduct', ['id' => $item->id]) }}">Sửa</a>
                     </td>
                     <td>
                         <a href="">Xóa</a>
