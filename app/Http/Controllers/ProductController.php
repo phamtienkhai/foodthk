@@ -50,7 +50,7 @@ class ProductController extends Controller
             $product->title = $request->title;
             $product->type = $request->type;
             $product->price = $request->price;
-    
+
             if($request->hasfile('image_product')){
                 $file = $request->file('image_product');
                 $extension = $file->getClientOriginalExtension();
@@ -63,7 +63,7 @@ class ProductController extends Controller
             }
 
             $product->save();
-            
+
             return redirect()->route('seller.addProduct')->with('success', 'them thanh cong');
         }catch(Exception $error){
             dd($error);
@@ -80,7 +80,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -91,7 +91,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = new Product;
+
+
     }
 
     /**
@@ -114,6 +116,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::query()->where('id', $id)->delete();
+        $product = Product::query()->where('username', Auth::user()->username)->get();
+        return view('seller.showproduct', compact('product'));
+
     }
 }
