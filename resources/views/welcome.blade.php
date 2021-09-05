@@ -4,7 +4,20 @@
     <div class="container">
         <div class="flex-center position-ref full-height">
             <div class="content">
-                <div class="links" id="menu-top">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="/seller">Trang người bán</a>
+
+                    @else
+                        <a href="{{ route('login') }}">Trang người bán</a>
+                    @endauth
+                @endif
+
+                <div class="title m-b-md text-center">
+                    <h1>foodTHK</h1>
+                </div>
+
+                <div class="links">
                     <div class="text-center">
                         <a href="" class="menu-top">&nbsp;Cơm&nbsp;  </a>
                         <a href="" class="menu-top">&nbsp;Cháo&nbsp;</a>
@@ -17,7 +30,7 @@
 
             <!-- boxes -->
             <div class="main-content">
-                @foreach ($product as $item) 
+                @foreach ($product as $item)
                 <div class="box">
                     <div class="box-wrapper">
                         <div class="box-top">
@@ -33,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+                    <p><a href="">dat hang</a></p>
                 </div>
                 @endforeach
                 <div></div>

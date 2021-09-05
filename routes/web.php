@@ -28,7 +28,10 @@ Route::group(['prefix' => 'seller'], function (){
     Route::get('/product/add', 'ProductController@create')->name('seller.addProduct');
     Route::post('/product/add', 'ProductController@store')->name('seller.storeProduct');
     Route::get('/product/list', 'ProductController@sellerIndex')->name('seller.showProduct');
-    Route::put('/product/update', 'ProductController@update')->name('seller.updateProduct');
-    Route::delete('/product/delete', 'ProductController@destroy')->name('seller.deleteProduct');
+    Route::get('/product/edit/{id}', 'ProductController@edit')->name('seller.editProduct');
+    Route::post('/product/update/{id}', 'ProductController@update')->name('seller.updateProduct');
 });
 
+Route::group(['prefix' => 'account'], function (){
+    Route::get('/profile', 'AccountController@index')->name('user.profile');
+});

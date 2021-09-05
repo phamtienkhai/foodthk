@@ -7,9 +7,10 @@
         </div>
         <div id="seller-main-content">
             <h1>show sản phẩm</h1>
-            <table id="seller-show-products">
+            <table class="table">
+                <thead>
                 <tr>
-                    <th></th>
+                    <th>Ảnh</th>
                     <th>Tên sản phẩm</th>
                     <th>Loại sản phẩm</th>
                     <th>Giá</th>
@@ -24,13 +25,14 @@
                     <td>{{ $item->type }}</td>
                     <td>{{ $item->price }}</td>
                     <td>
-                        <a href="{{ route('seller.updateProduct')}}">Sửa</a>
+                        <a href="{{ route('seller.editProduct', ['id' => $item->id]) }}">Sửa</a>
                     </td>
                     <td>
                         <a href="">Xóa</a>
                     </td>
                 </tr>
                 @endforeach
+                </tbody>
             </table>
         </div>
     </div>

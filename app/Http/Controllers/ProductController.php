@@ -50,7 +50,7 @@ class ProductController extends Controller
             $product->title = $request->title;
             $product->type = $request->type;
             $product->price = $request->price;
-    
+
             if($request->hasfile('image_product')){
                 $file = $request->file('image_product');
                 $extension = $file->getClientOriginalExtension();
@@ -63,7 +63,7 @@ class ProductController extends Controller
             }
 
             $product->save();
-            
+
             return redirect()->route('seller.addProduct')->with('success', 'them thanh cong');
         }catch(Exception $error){
             dd($error);
@@ -80,7 +80,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -89,9 +89,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $product = Product::query()->where('id', $id)->get();
+        
+        return view('seller.editproduct', compact('product'));
     }
 
     /**
@@ -103,7 +105,33 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try{
+            $product = new Product;
+            $product->username = Auth::user()->username;
+            $product->title = $request->title;
+            $product->type = $request->type;
+            $product->price = $request->price;
+    
+            if($request->hasfile('image_product')){
+                $file = $request->file('image_product');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->move('uploads/product/', $filename);
+                $product->image_product = $filename;
+
+            }else {
+                $product->image_product = "imagedefaults.jpg";
+            }
+
+            Product::where('id', $id)->update(['username' => $product->username, 
+            'title' => $product->title, 'type' => $product->type, 
+            'price' => $product->price, 'image_product' => $product->image_product ]);
+            // dd("success");
+            return redirect()->route('seller.showProduct')->with('success', 'update thanh cong');
+        }catch(Exception $error){
+            dd($error);
+            return redirect()->route('seller.updateProduct')->with('error', 'loi');
+        }
     }
 
     /**
@@ -114,6 +142,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::query()->where('id', $id)->delete();
+        $product = Product::query()->where('username', Auth::user()->username)->get();
+        return view('seller.showproduct', compact('product'));
+
     }
 }
