@@ -7,6 +7,7 @@
                 @if (Route::has('login'))
                     @auth
                         <a href="/seller">Trang người bán</a>
+
                     @else
                         <a href="{{ route('login') }}">Trang người bán</a>
                     @endauth
@@ -18,18 +19,18 @@
 
                 <div class="links">
                     <div class="text-center">
-                        <a href="" class="menu-top">Cơm</a>
-                        <a href="" class="menu-top">Cháo</a>
-                        <a href="" class="menu-top">Phở</a>
-                        <a href="" class="menu-top">Đồ Ăn Vặt</a>
-                        <a href="" class="menu-top">Giải khát</a>
+                        <a href="" class="menu-top">&nbsp;Cơm&nbsp;  </a>
+                        <a href="" class="menu-top">&nbsp;Cháo&nbsp;</a>
+                        <a href="" class="menu-top">&nbsp;Phở&nbsp;</a>
+                        <a href="" class="menu-top">&nbsp;Đồ Ăn Vặt&nbsp;</a>
+                        <a href="" class="menu-top">&nbsp;Giải khát&nbsp;</a>
                     </div>
                 </div>
             </div>
-            <hr>
+
             <!-- boxes -->
             <div class="main-content">
-                @foreach ($product as $item) 
+                @foreach ($product as $item)
                 <div class="box">
                     <div class="box-wrapper">
                         <div class="box-top">
@@ -40,13 +41,15 @@
                                 {{ $item->title }}
                             </div>
                             <div class="product-price">
-                                {{ $item->price }}
+                                <span>{{ $item->price }}</span>
+                                <span>&#8363;</span>
                             </div>
                         </div>
                     </div>
                     <p><a href="">dat hang</a></p>
                 </div>
                 @endforeach
+                <div></div>
             </div>
             <!-- end of boxes -->
         </div>

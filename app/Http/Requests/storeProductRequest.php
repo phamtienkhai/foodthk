@@ -24,7 +24,7 @@ class storeProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'max:4'],
+            'title' => ['required', 'max:32'],
             'type' => ['required'],
             'price' => ['required', 'numeric'],
             'image_product' => ['mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
@@ -34,8 +34,10 @@ class storeProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'bat buoc nhap',
-            'title.max' => 'chi cho nhap 4 ki tu',
+            'title.required' => 'Bạn cần thêm tên sản phẩm',
+            'title.max' => 'Tên sản phẩm phải không quá 32 kí tự',
+            'image_product.mimes' => 'Định dạng file không phù hợp',
+            'image_product.max' => 'Dung lượng ảnh quá lớn',
         ];
     }
 }

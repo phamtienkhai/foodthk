@@ -33,5 +33,5 @@ Route::group(['prefix' => 'seller'], function (){
 });
 
 Route::group(['prefix' => 'account'], function (){
-    
+    Route::get('/profile', 'AccountController@index')->name('user.profile');
 });
