@@ -80,7 +80,7 @@
                                     <label class="col-md-4 col-form-label text-md-right">Giới tính</label>
 
                                     <div class="col-md-6">
-                                        <input id="rdGioitinh" type="checkbox" value = "Nam"  name="rdGT" >Nam
+                                        <input id="rdGioitinh" type="radio" value = "Nam"  name="rdGT" >Nam
                                         <input id="rdGioitinh" type="radio"  value = "Nữ" name="rdGT" >Nữ
                                         <input id="rdGioitinh" type="radio"  value = "Khác" name="rdGT" >Khác
                                     </div>

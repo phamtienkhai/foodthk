@@ -34,7 +34,9 @@
                 <div class="box">
                     <div class="box-wrapper">
                         <div class="box-top">
-                            <img src="{{ asset('uploads/product/' .$item->image_product )}}" alt="Image">
+                            <a href="">
+                                <img src="{{ asset('uploads/product/' .$item->image_product )}}" alt="Image">   
+                            </a>                            
                         </div>
                         <div class="box-bottom">
                             <div class="product-name">
