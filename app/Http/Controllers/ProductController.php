@@ -112,6 +112,7 @@ class ProductController extends Controller
             $product->type = $request->type;
             $product->price = $request->price;
     
+            // dd($product->image_product);
             if($request->hasfile('image_product')){
                 $file = $request->file('image_product');
                 $extension = $file->getClientOriginalExtension();

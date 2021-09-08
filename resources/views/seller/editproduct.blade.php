@@ -36,6 +36,7 @@
             <div class="mb-3">
                
                 <label for="title" class="form-label">Hình ảnh</label>
+                dd({{$product[0]}});
                 <input type="file" class="form-control" id="exampleInputPassword1" name="image_product" value="{{ isset($product[0]->image_product) ? old('image_product', $product[0]->image_product) : 'imagedefault.jpg' }}">
             </div>
             

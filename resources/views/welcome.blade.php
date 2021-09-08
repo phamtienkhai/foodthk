@@ -46,9 +46,12 @@
                                 <span>{{ $item->price }}</span>
                                 <span>&#8363;</span>
                             </div>
+
+                            <div class="">
+                                <a href=""><span>Chi tiết</span></a>
+                            </div>
                         </div>
                     </div>
-                    <p><a href="">dat hang</a></p>
                 </div>
                 @endforeach
                 <div></div>
